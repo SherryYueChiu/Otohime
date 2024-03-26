@@ -1,0 +1,23 @@
+{
+  "name": "otohime",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build && cd dist && sw-precache --config=sw-precache-config.js",
+    "preview": "vite preview",
+    "sw": "sw-precache --config=sw-precache-config.js"
+  },
+  "dependencies": {
+    "sw-precache": "^5.2.1",
+    "sweetalert2": "^11.10.6",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "sass": "^1.62.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9",
+    "vue-tsc": "^1.4.2"
+  }
+}

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: Cubic;
+  src: url(./assets/Cubic_11_1.100_R.woff2);
+}
+
+body {
+  margin: 0;
+  font-family: Cubic;
+  background: #1a1e23;
+}
