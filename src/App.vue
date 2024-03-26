@@ -100,7 +100,9 @@ function toggleBGM() {
   <transition name="slide-fade">
     <AnimatedBackground v-show="isPlaying"></AnimatedBackground>
   </transition>
-  <div class="container" @click="toggleBGM"></div>
+  <div class="container" @click="toggleBGM">
+    <div class="title">{{ isPlaying ? "點擊暫停音姬" : "點擊播放音姬" }}</div>
+  </div>
   <audio ref="bgm" loop src="./otohime.mp3"></audio>
 </template>
 
@@ -109,13 +111,20 @@ function toggleBGM() {
   position: fixed;
   width: 100%;
   height: 100vh;
+  display: grid;
+  place-content: center;
+
+  & > .title {
+    color: white;
+    font-size: 2em;
+  }
 }
 
 .slide-fade-enter-active {
-  transition: all .1s ease;
+  transition: all 0.1s ease;
 }
 .slide-fade-leave-active {
-  transition: all 1.5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 1.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
