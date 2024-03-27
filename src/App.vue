@@ -39,12 +39,7 @@ onMounted(() => {
       album: "未知",
       artwork: [
         {
-          src: "./images/logo/maskable_icon_x256.jpeg",
-          sizes: "256x256",
-          type: "image/jpeg",
-        },
-        {
-          src: "./images/logo/maskable_icon_x512.jpeg",
+          src: "/images/logo/maskable_icon_x512.jpg",
           sizes: "512x512",
           type: "image/jpeg",
         },
