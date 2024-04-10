@@ -39,9 +39,9 @@ onMounted(() => {
       album: "未知",
       artwork: [
         {
-          src: "/images/logo/maskable_icon_x512.jpg",
+          src: "/images/logo/maskable_icon_x512.png",
           sizes: "512x512",
-          type: "image/jpeg",
+          type: "image/png",
         },
       ],
     });
