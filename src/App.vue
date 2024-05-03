@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import AnimatedBackground from "./components/AnimatedBackground.vue";
-
 import Swal from "sweetalert2";
+import { commitHash } from "./projectVersion.json";
+
+const semanticVersion = "1.0.0";
+const fullVersion = `version: ${semanticVersion ? "v" + semanticVersion : ""}${
+  commitHash ? "-" + commitHash.slice(0, 6) : ""
+}`;
+console.log(`version: ${fullVersion}`);
 
 const bgm = ref<HTMLAudioElement>();
 const isPlaying = ref(false);
-
-console.log("version: 0.0.1");
 
 const Toast = Swal.mixin({
   toast: true,
@@ -99,6 +103,7 @@ function toggleBGM() {
     <div class="title">{{ isPlaying ? "點擊暫停音姬" : "點擊播放音姬" }}</div>
   </div>
   <audio ref="bgm" loop src="./otohime.mp3"></audio>
+  <div class="version">{{ fullVersion }}</div>
 </template>
 
 <style scoped lang="scss">
@@ -113,6 +118,16 @@ function toggleBGM() {
     color: white;
     font-size: 2em;
   }
+}
+
+.version {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  color: #888;
+  padding: 1em 0 1em;
 }
 
 .slide-fade-enter-active {
