@@ -1,17 +1,20 @@
 {
-  "name": "otohime",
-  "private": true,
-  "version": "0.0.0",
+  "name": "sticker-clipboard",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build && cd dist && sw-precache --config=sw-precache-config.js",
     "preview": "vite preview",
-    "sw": "sw-precache --config=sw-precache-config.js"
+    "sw": "sw-precache --config=sw-precache-config.js",
+    "downloadSticker": "python crower/stickerDownload.py",
+    "downloadSticon": "python crower/sticonDownload.py",
+    "printFileTree": "python crower/printFileTree.py"
   },
   "dependencies": {
+    "copy-image-clipboard": "^2.1.2",
     "sw-precache": "^5.2.1",
     "sweetalert2": "^11.10.6",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
